@@ -156,7 +156,7 @@ CRUDを行う機能を増やす形でバックエンドの能力を培うこと�
 
 *ペイント機能 - CSS Paint API
 
-*ウィザード形式の入力 - devise
+*ログイン認証機能 - devise
 
 *シェア機能 - Instagram Graph APIやTwitter API
 
