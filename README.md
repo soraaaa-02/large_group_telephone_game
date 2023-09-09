@@ -170,5 +170,3 @@ CRUDを行う機能を増やす形でバックエンドの能力を培うこと�
 
 
 画面遷移図(figma): https://www.figma.com/file/RXXUo3ijt3lr8cu86uGmbY/%E5%A4%A7%E4%BA%BA%E6%95%B0%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88%E4%BC%9D%E8%A8%80%E3%82%B2%E3%83%BC%E3%83%A0?type=design&node-id=0%3A1&mode=design&t=W7QIQyav9EtdDY4R-1
-
-ER図(google drive): https://drive.google.com/file/d/1o7tqTcuVwI909S-IdNbViD-ZkXECkXFu/view?usp=sharing
