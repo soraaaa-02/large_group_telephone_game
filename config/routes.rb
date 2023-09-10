@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'challenges/index'
   root to: 'top#index'
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
 end
