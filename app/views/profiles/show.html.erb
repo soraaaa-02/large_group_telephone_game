@@ -1,0 +1,4 @@
+<h1>Profiles#show</h1>
+<p>Find me in app/views/profiles/show.html.erb</p>
+<%= link_to 'logout', destroy_user_session_path, data: { turbo_method: :delete } %>
+<%= current_user.last_name %>
