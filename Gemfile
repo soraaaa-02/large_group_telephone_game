@@ -45,7 +45,6 @@ gem "bootsnap", require: false
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
-gem 'sassc'
 gem 'sorcery'
 gem 'draper'
 
