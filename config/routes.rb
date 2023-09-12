@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :challenges do
+    get 'canvas/index'
+    get 'canvas/new'
+    get 'canvas/create'
+    get 'canvas/show'
+  end
   get 'profiles/show'
   get 'profiles/edit'
   get 'profiles/update'
