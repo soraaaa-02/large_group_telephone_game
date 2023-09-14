@@ -1,0 +1,28 @@
+<div class="form container">
+    <div class="form_in d-flex justify-content-center">
+      <div class="form_container">
+        <h2 class="py-2 text-center">Sign up</h2>
+          <%= form_with model: @challenge, local: true do |f| %>
+          <% if @challenge.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+      <% @challenge.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+            <div class="field">
+                <%= f.label :junre %>
+                <%= f.text_field :junre, class: 'form-control' %>
+            </div>
+          
+            <div class="actions text-center mt-3">
+              <%= f.submit "Check", class: "btn btn-primary" %>
+            </div>
+            
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>

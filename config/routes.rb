@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  namespace :challenges do
-    get 'canvas/index'
-    get 'canvas/new'
-    get 'canvas/create'
-    get 'canvas/show'
+  resource :challenges do
+    resource :canvas, only: %i[index new create show]
   end
   get 'profiles/show'
   get 'profiles/edit'
