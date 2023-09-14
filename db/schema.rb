@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_10_102019) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_12_094403) do
+  create_table "challenges", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "genre"
+    t.string "title"
+    t.integer "limit_people"
+    t.integer "current_people"
+    t.date "limit_time"
+    t.string "canvas_gif"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_challenges_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -29,4 +42,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_10_102019) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "challenges", "users"
 end
