@@ -10,10 +10,10 @@ class ChallengesController < ApplicationController
   
   def create
     @challenge = Challenge.new(challenge_params)
-    @challenge.user_id = current_user
+    @challenge.user_id = current_user.id
 
     if @challenge.save
-      redirect_to @challenge, success: 'challenge was successfully created.'
+      redirect_to challenges_index_path, success: 'challenge was successfully created.'
     else
       render :new
     end
@@ -41,6 +41,6 @@ class ChallengesController < ApplicationController
   end
 
   def challenge_params
-    params.require(:challenge).permit(:title, :genre, :title, :limit_people, :current_people, :limit_date, :canvas_gif)
+    params.require(:challenge).permit(:title, :genre, :title, :limit_people, :limit_datetime, :canvas_gif)
   end
 end
