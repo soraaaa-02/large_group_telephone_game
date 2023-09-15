@@ -13,11 +13,10 @@
 ActiveRecord::Schema[7.0].define(version: 2023_09_12_094403) do
   create_table "challenges", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "genre"
-    t.string "title"
+    t.string "genre", default: "none"
+    t.string "title", null: false
     t.integer "limit_people"
-    t.integer "current_people"
-    t.date "limit_time"
+    t.datetime "limit_datetime"
     t.string "canvas_gif"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

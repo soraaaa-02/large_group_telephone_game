@@ -1,0 +1,67 @@
+<div class="form container">
+    <div class="form_in d-flex justify-content-center">
+      <div class="form_container">
+        <h2 class="py-2 text-center">Challenge Create</h2>
+          <%= form_with model: @challenge, local: true do |f| %>
+            <% if @challenge.errors.any? %>
+              <div class="alert alert-danger">
+                <ul>
+                  <% @challenge.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="field">
+                <%= f.label :title %>
+                <%= f.text_field :title, class: 'form-control' %>
+            </div>
+
+            <div class="field">
+                <%= f.label :junre %>
+                <div class="col text-center">
+                  <%= f.radio_button :junre, "animal" %>
+                  <%= f.label :junre_animal, "animal" %>
+                  <%= f.radio_button :junre, "vehicle" %>
+                  <%= f.label :junre_vehicle, "vehicle" %>
+                </div>
+                <div class="col text-center">
+                  <%= f.radio_button :junre, "person" %>
+                  <%= f.label :junre_person, "person" %>
+                  <%= f.radio_button :junre, "character" %>
+                  <%= f.label :junre_character, "character" %>
+                </div>
+                <div class="col text-center">
+                  <%= f.radio_button :junre, "thing" %>
+                  <%= f.label :junre_thing, "thing" %>
+                  <%= f.radio_button :junre, "movie" %>
+                  <%= f.label :junre_movie, "movie" %>
+                </div>
+                <div class="col text-center">
+                  <%= f.radio_button :junre, "country" %>
+                  <%= f.label :junre_country, "country" %>
+                  <%= f.radio_button :junre, "none", checked: true %>
+                  <%= f.label :junre_none, "none" %>
+                </div>
+            </div>
+                        
+            <div class="field">
+                <%= f.label :limit_people %>(default: 10)
+                <%= f.number_field :limit_people, min: 1, value: 10, class: 'form-control' %>
+            </div>
+
+            <div class="field">
+                <%= f.label :limit_datetime %>(default: 1days later)
+                <%= f.datetime_field :limit_datetime, value: Time.now.since(1.days).strftime("%Y-%m-%dT%H:00:00") , class: 'form-control' %>
+            </div>
+          
+            <div class="actions text-center mt-3">
+              <%= f.submit "Check", class: "btn btn-primary" %>
+            </div>
+            
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>
