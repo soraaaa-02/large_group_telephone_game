@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
+  root to: 'top#index'
   resource :challenges do
     resource :canvas, only: %i[index new create show]
   end
-  get 'profiles/show'
-  get 'profiles/edit'
-  get 'profiles/update'
-  get 'challenges/index'
-  root to: 'top#index'
+  resource :profiles, only: %i[index edit update show]
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
